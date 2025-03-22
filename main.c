@@ -6,7 +6,7 @@
 /*   By: axlleres <axlleres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 23:41:50 by axlleres          #+#    #+#             */
-/*   Updated: 2025/03/20 12:50:03 by axlleres         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:18:10 by axlleres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int	main(int argc, char **argv)
 		stack_free(stack_a);
 		write_error_exit("Error\n", 1);
 	}
-	//print_stack(stack_a);
-	stack_sort(stack_a, stack_b);
-	//print_stack(stack_a);
+	if (!stack_is_sorted(stack_a))
+		stack_sort(stack_a, stack_b);
 	stack_free(stack_a);
 	stack_free(stack_b);
 	return (0);

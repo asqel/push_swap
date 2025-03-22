@@ -6,7 +6,7 @@
 /*   By: axlleres <axlleres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 20:09:49 by axlleres          #+#    #+#             */
-/*   Updated: 2025/03/18 18:28:08 by axlleres         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:23:58 by axlleres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	stack_contain(t_stack *s, int v)
 	return (0);
 }
 
-int stack_is_sorted(t_stack *s)
+int	stack_is_sorted(t_stack *s)
 {
 	int	i;
 
@@ -60,40 +60,6 @@ int stack_is_sorted(t_stack *s)
 		i++;
 	}
 	return (1);
-}
-
-void	stack_rotate_up(t_stack *a)
-{
-	int	i;
-	int	last;
-
-	if (a->len < 2)
-		return ;
-	last = a->val[a->len - 1];
-	i = a->len - 1;
-	while (i > 0)
-	{
-		a->val[i] = a->val[i - 1];
-		i--;
-	}
-	a->val[0] = last;
-}
-
-void	stack_rotate_down(t_stack *a)
-{
-	int	i;
-	int	first;
-
-	if (a->len < 2)
-		return ;
-	first = a->val[0];
-	i = 0;
-	while (i < a->len - 1)
-	{
-		a->val[i] = a->val[i + 1];
-		i++;
-	}
-	a->val[a->len - 1] = first;
 }
 
 void	stack_push_from(t_stack *a, t_stack *b)

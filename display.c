@@ -6,12 +6,13 @@
 /*   By: axlleres <axlleres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 20:19:52 by axlleres          #+#    #+#             */
-/*   Updated: 2025/03/06 00:15:15 by axlleres         ###   ########.fr       */
+/*   Updated: 2025/03/22 21:36:47 by axlleres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "unistd.h"
+#include <unistd.h>
+#include <stdlib.h>
 
 void	write_error(char *err)
 {
@@ -23,7 +24,6 @@ void	write_error(char *err)
 	write(STDERR_FILENO, err, len);
 }
 
-
 void	write_error_exit(char *err, int exit_code)
 {
 	int	len;
@@ -34,4 +34,3 @@ void	write_error_exit(char *err, int exit_code)
 	write(STDERR_FILENO, err, len);
 	exit(exit_code);
 }
-
